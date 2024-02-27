@@ -14,10 +14,10 @@ jobs:
 
     steps: 
       - name: Checking out Repository
-        uses: Assignment1/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Setting up Python
-        uses: Assignment1/setup-python@v2
+        uses: actions/setup-python@v2
         with:
           python-version: 3.9
 
@@ -32,10 +32,10 @@ jobs:
     
     steps:
       - name: Checking out Repository
-        uses: Assignment1/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Setting up Python
-        uses: Assignment1/setup-python@v2
+        uses: actions/setup-python@v2
         with:
           python-version: 3.9
 
@@ -48,7 +48,7 @@ jobs:
         run: pyb
 
       - name: Uploading the Test Results
-        uses: Assignment1/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: test-results
           path: target/reports
