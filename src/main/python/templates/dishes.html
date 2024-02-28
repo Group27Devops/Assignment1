@@ -9,7 +9,7 @@
     <div class="grid-container">
         {% for dish in dishes %}
         <div class="grid-item">
-            <a href="{{ url_for('recipe', id=dish.idMeal) }}">
+            <a href="{{ url_for('recipe_dish', recipe_id=dish.idMeal) }}">
                 <img src="{{ dish.strMealThumb }}" alt="{{ dish.strMeal }}">
                 <p>{{ dish.strMeal }}</p>
             </a>
