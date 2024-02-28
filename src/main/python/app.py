@@ -1,9 +1,12 @@
 """Modules defined for using requests lib and Flask framework"""
 import requests
 from flask import Flask, render_template
+from flask_wtf import CSRFProtect
 
 
 app = Flask(__name__)
+csrf = CSRFProtect()
+csrf.init_app(app)
 BASE_URL = "https://www.themealdb.com/api/json/v1"
 
 @app.route('/')
