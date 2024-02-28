@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Dishes - Food Recipe App{% endblock %}
+
+{% block content %}
+<div class="dishes-page">
+    <h2>All Dishes</h2>
+    <input type="text" id="search" placeholder="Search...">
+    <div class="grid-container">
+        {% for dish in dishes %}
+        <div class="grid-item">
+            <a href="{{ url_for('recipe', id=dish.idMeal) }}">
+                <img src="{{ dish.strMealThumb }}" alt="{{ dish.strMeal }}">
+                <p>{{ dish.strMeal }}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Landing page styles */
+.landing-page {
+    text-align: center;
+    padding: 50px;
+}
+
+.landing-page h1 {
+    margin-bottom: 20px;
+}
+
+.landing-page button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Dishes page styles */
+.dishes-page {
+    text-align: center;
+    padding: 20px;
+}
+
+.dishes-page h2 {
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.grid-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.grid-item img {
+    max-width: 100%;
+}
+
+/* Recipe page styles */
+.recipe-page {
+    text-align: center;
+    padding: 20px;
+}
+
+.recipe-page h2 {
+    margin-bottom: 20px;
+}
+
+.recipe-page img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.recipe-page ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recipe-page ul li {
+    margin-bottom: 5px;
+}

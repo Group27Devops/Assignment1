@@ -1,10 +1,26 @@
-#!/usr/bin/python
-from unittest import TestCase
+import unittest
 from app import app
 
-class AppTest(TestCase):
+class TestApp(unittest.TestCase):
 
-    def test_hello_world(self):
-        response = app.test_client().get("/")
+    def setUp(self):
+        app.config['TESTING'] = True
+        self.app = app.test_client()
+
+    def test_index_page(self):
+        response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data.decode("utf-8"), "Hello, World!")
+        self.assertIn(b'Welcome to Food Recipe App', response.data)
+
+    def test_dishes_page(self):
+        response = self.app.get('/dishes')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'All Dishes', response.data)
+
+    def test_recipe_page(self):
+        response = self.app.get('/recipe/52772')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Teriyaki Chicken Casserole', response.data)
+
+if __name__ == '__main__':
+    unittest.main()

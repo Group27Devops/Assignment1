@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Food Recipe App{% endblock %}
+
+{% block content %}
+<div class="landing-page">
+    <h1>Welcome to Food Recipe App</h1>
+    <button><a href="{{ url_for('dishes') }}">Explore</a></button>
+</div>
+{% endblock %}
