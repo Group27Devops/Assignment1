@@ -31,4 +31,4 @@ def recipe_dish(recipe_id):
     return render_template('recipe.html', recipe=recipe, ingredients=ingredients)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
